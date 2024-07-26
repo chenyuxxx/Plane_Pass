@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://34ke7sngrvq7" path="res://assets/music/time_for_adventure.mp3" id="1_8cyla"]
 
 [node name="Music" type="AudioStreamPlayer2D"]
+process_mode = 3
 position = Vector2(-6, -80)
 stream = ExtResource("1_8cyla")
 autoplay = true
