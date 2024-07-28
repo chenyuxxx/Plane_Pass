@@ -1,7 +1,9 @@
 extends Node
 
-static var inventory = []
+var inventory = []
 var player_node: Node = null
+
+@onready var INVENTORY_SLOT = preload("res://scenes/inventory_slot.tscn")
 
 signal inventory_updated
 
