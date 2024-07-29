@@ -20,6 +20,18 @@ config/icon="res://icon.svg"
 Music="*res://scenes/music.tscn"
 Global="*res://scripts/Global.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg")
+
+[global]
+
+snap_controls_to_pixels=false
+
+[gui]
+
+common/snap_controls_to_pixels=false
+
 [input]
 
 jump={
