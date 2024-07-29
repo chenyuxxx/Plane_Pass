@@ -8,7 +8,15 @@ func _ready() -> void:
 	_on_inventory_updated()
 
 func _on_inventory_updated():
-	pass
+	clear_grid_container()
+	for item in Global.inventory:
+		#　实例化子节点
+		var slot = Global.INVENTORY_SLOT.instantiate()
+		grid_container.add_child(slot)
+		if item != null:
+			slot.set_item(item)
+		else:
+			slot.set_empty()
 
 func clear_grid_container():
 	while grid_container.get_child_count() > 0:
