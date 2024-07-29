@@ -8,6 +8,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interact_ui: CanvasLayer = $interactUI
+@onready var inventory_ui: CanvasLayer = $inventoryUI
 
 # 将玩家角色填入全局
 func _ready() -> void:
@@ -45,3 +46,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused
