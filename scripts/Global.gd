@@ -12,7 +12,6 @@ func _ready() -> void:
 
 # 增加物品
 func add_item(item):
-	print("当前数组长度为：",inventory.size())
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["item_type"] == item["item_type"] and inventory[i]["item_effect"] == item["item_effect"]:
 			inventory[i]["quantity"] += item["quantity"]
@@ -22,7 +21,7 @@ func add_item(item):
 		elif inventory[i] == null:
 			inventory[i] = item
 			inventory_updated.emit()
-			print("进入新增，当前数组值为：", inventory)
+			print("进入新增")
 			return true
 	return false
 

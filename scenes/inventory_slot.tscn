@@ -67,10 +67,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_hsjve")
 [node name="DetailsPanel" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_top = -135.0
 offset_right = 240.0
-offset_bottom = -5.0
-color = Color(0.2, 1, 1, 1)
+offset_bottom = 130.0
+color = Color(0.795052, 0.950464, 0.478474, 1)
 
 [node name="ItemName" type="Label" parent="DetailsPanel"]
 layout_mode = 1
@@ -114,9 +113,8 @@ text = "Effect"
 [node name="UsagePanel" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_top = -135.0
 offset_right = 240.0
-offset_bottom = -5.0
+offset_bottom = 130.0
 color = Color(0.705378, 0.957457, 0.817201, 1)
 
 [node name="UseButton" type="Button" parent="UsagePanel"]
