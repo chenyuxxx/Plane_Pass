@@ -26,8 +26,15 @@ func add_item(item):
 	return false
 
 # 删除物品
-func remove_item():
-	inventory_updated.emit()
+func remove_item(item_type,item_effct):
+	for i in range(inventory.size()):
+		if inventory[i] != null and inventory[i]["item_type"] == item_type and inventory[i]["item_effect"] == item_effct:
+			inventory[i]["quantity"] -= 1
+			if inventory[i]["quantity"] <= 0:
+				inventory = null
+			inventory_updated.emit()
+			return true
+		return false
 
 # 增加库存容量
 func increase_inventory_size():
@@ -35,3 +42,6 @@ func increase_inventory_size():
 
 func set_player_reference(player):
 	player_node = player
+
+func adjust_drop_position(position):
+	var radius = 100
