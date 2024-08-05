@@ -45,3 +45,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	player_in_range = true
 	body.interact_ui.visible = true
+
+func set_item_data(data):
+	item_type = data["item_type"]
+	item_name = data["item_name"]
+	item_texture = data["item_texture"]
+	item_effect = data["item_effect"]
