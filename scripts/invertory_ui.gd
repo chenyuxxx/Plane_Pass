@@ -4,7 +4,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("ready!")
 	Global.inventory_updated.connect(_on_inventory_updated)
 	_on_inventory_updated()
 
