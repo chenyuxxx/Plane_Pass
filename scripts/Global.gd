@@ -28,10 +28,17 @@ func add_item(item):
 # 删除物品
 func remove_item(item_type,item_effct):
 	for i in range(inventory.size()):
+		print("当前参数：" + item_type + "," + item_effct)
+		print("------")
+		print(inventory[i])
 		if inventory[i] != null and inventory[i]["item_type"] == item_type and inventory[i]["item_effect"] == item_effct:
+			print("------")
+			print("对数据进行--")
 			inventory[i]["quantity"] -= 1
+			print("--完成")
 			if inventory[i]["quantity"] <= 0:
-				inventory = null
+				print("进入置空")
+				inventory[i] = null
 			inventory_updated.emit()
 			return true
 	return false
